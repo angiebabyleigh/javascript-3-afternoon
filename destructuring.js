@@ -18,11 +18,16 @@ var carDetails = {
 // Do not edit the code above.
 
 /*
-  Use object destructuring to save the property values from the object carDetails into new variables. 
+  Use object destructuring to save the property values from the object 
+  carDetails into new variables. 
 */
 
 //Code Here
+function destructObj({name}) {
+  return name;
+}
 
+let color = destructObj(carDetails.color);
 
 
 ////////// PROBLEM 2 //////////

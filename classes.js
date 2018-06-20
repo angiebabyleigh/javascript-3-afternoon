@@ -1,5 +1,7 @@
 /* 
-  Once you complete a problem, refresh ./classes.html in your browser and check to see if the problem's test(s) are passing.
+  Once you complete a problem, refresh ./classes.html in 
+  your browser and check to see if the problem's test(s) are 
+  passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
 
@@ -23,14 +25,30 @@
     - age
   Each employee has the following methods:
     - makeWidget
-      - This returns a string equal to the employees first name + last name + the word widget
+      - This returns a string equal to the employees first name
+       + last name + the word widget
       - Example: "Dave Smith Widget"
 
-  Call your class Employee and receive all the data in the constructor in the order listed above.
+  Call your class Employee and receive all the data in the 
+  constructor in the order listed above.
 */
 
 //Code Here
+class Employee {
+  constructor(first, last, email, age) {
+    this.first_name = first;
+    this.last_name = last;
+    this.email = email;
+    this.age = age;
+  }
 
+  makeWidget() {
+    return this.first_name +' ' + this.last_name + ' Widget';
+  }
+}
+
+let empl = new Employee('Dave', 'Smith', 'dave.smith@email.com', 32);
+console.log(empl.makeWidget());
 
 
 ////////// PROBLEM 2 //////////
@@ -42,7 +60,8 @@
     - reports (other employees) that defaults to an empty array
   Each manager has the following additional methods:
     - hire (employee)
-      - Accepts a new employee as a parameter and pushes it to their list of reports.
+      - Accepts a new employee as a parameter and pushes it to their list of 
+      reports.
     - fire (index)
       - Fire removes employees from their list of reports at the given index
 
@@ -50,6 +69,25 @@
 */
 
 //Code Here
+class Manager extends Employee{
+  constructor(first, last, email, age, report){
+    super(first, last, email, age)
+    this.report = report;
+  }
+
+  hire(empl){
+    this.report.push(empl);
+  }
+
+  fire(index){
+    this.report.splice(index, 1);
+  }
+}
+
+let report = [];
+
+darryl = new Manager('Darryl', 'Bates', 'dbates1133@email.com', 57, report);
+
 
 
 
