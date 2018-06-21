@@ -72,21 +72,21 @@ console.log(empl.makeWidget());
 class Manager extends Employee {
   constructor(first, last, email, age, report) {
     super(first,last,email,age)
-    this.report = report
+    this.report = [];
   }
 
   hire(employee) {
-    this.report.push(employee)
+    this.report.push(employee);
   }
 
   fire(index){
-    this.report.splice(index, 1)
+    this.report.splice(index, 1);
   }
 }
 
-let list = [];
+// let list = [];
 
-darryl = new Manager('Darryl', 'Bates', 'dbates1133@email.com', 57, list);
+darryl = new Manager('Darryl', 'Bates', 'dbates1133@email.com', 57);
 darryl.hire(empl);
 darryl.fire(0);
 
