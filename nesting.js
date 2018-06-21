@@ -127,7 +127,7 @@ var cat = {
 
 //Code Here
 var grumpyActivity;
-var fluffy2ndFriend;
+var fluffy2ndFriend =;
 
 
 

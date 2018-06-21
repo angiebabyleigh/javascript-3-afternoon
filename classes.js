@@ -43,7 +43,7 @@ class Employee {
   }
 
   makeWidget() {
-    return this.first_name +' ' + this.last_name + ' Widget';
+    return this.first_name + ' ' + this.last_name + ' Widget';
   }
 }
 
@@ -69,24 +69,26 @@ console.log(empl.makeWidget());
 */
 
 //Code Here
-class Manager extends Employee{
-  constructor(first, last, email, age, report){
-    super(first, last, email, age)
-    this.report = report;
+class Manager extends Employee {
+  constructor(first, last, email, age, report) {
+    super(first,last,email,age)
+    this.report = report
   }
 
-  hire(empl){
-    this.report.push(empl);
+  hire(employee) {
+    this.report.push(employee)
   }
 
   fire(index){
-    this.report.splice(index, 1);
+    this.report.splice(index, 1)
   }
 }
 
-let report = [];
+let list = [];
 
-darryl = new Manager('Darryl', 'Bates', 'dbates1133@email.com', 57, report);
+darryl = new Manager('Darryl', 'Bates', 'dbates1133@email.com', 57, list);
+darryl.hire(empl);
+darryl.fire(0);
 
 
 
@@ -114,7 +116,47 @@ darryl = new Manager('Darryl', 'Bates', 'dbates1133@email.com', 57, report);
 */
 
 //Code Here
+class ProgressiveManager extends Employee {
+  constructor(first, last, email, age, report, title, bonus) {
+    super(first, last, email, age)
+    this.report = report;
+    this.title = 'Not a manager';
+    this.bonus = 0;
+  }
 
+  hire(employee){
+    this.report.push(employee);
+    setTitle();
+  }
+
+  fire(index){
+    this.report.splice(index, 1);
+    setTitle();
+    updateBonus();
+  }
+
+  setTitle(){
+    
+    if(this.reports.length === 0) {
+      this.title = 'Not a manager'
+    } else if (this.reports.length >=1 && this.reports.length <=3) {
+      this.title = 'Barely Manager'
+    } else if (this.reports.length >=4 && this.reports.length <= 10) {
+      this.title = 'Mostly Manager'
+    } else if (this.reports.length >= 11 && this.reports.length <=50) {
+      this.title = 'Manager'
+    } else if (this.reports.length >= 51 && this.reports.length <= 100) {
+      this.title = 'Manager Plus'
+    } else if (this.reports.length > 100) {
+      this.title = 'Bestest Manager'
+    }
+
+  }
+
+  updateBonus() {
+    this.bonus += 100;
+  }
+}
 
 
 ////////// PROBLEM 4 - Black Diamond //////////

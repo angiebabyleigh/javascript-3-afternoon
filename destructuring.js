@@ -23,11 +23,7 @@ var carDetails = {
 */
 
 //Code Here
-function destructObj({name}) {
-  return name;
-}
-
-let color = destructObj(carDetails.color);
+const {color, make, model, year} = carDetails;
 
 
 ////////// PROBLEM 2 //////////
@@ -40,7 +36,7 @@ let color = destructObj(carDetails.color);
 
 function greeting( obj ) {
   //Code Here
-  
+  const {firstName, lastName, title} = obj;
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -59,7 +55,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation(obj) {
+  const {utah, california, texas, arizona} = obj;
+  return utah + california + texas + arizona;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -73,13 +72,21 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function ingredients(obj) {
+  const {carb, fat, protein} = obj;
+  let newArray = [];
+  newArray.push(carb);
+  newArray.push(fat);
+  newArray.push(protein);
+  return newArray;
+}
 
 
 ////////// PROBLEM 5 //////////
 
 /*
-  Now we will use object destructuring as the function's parameter instead of destructuring the object inside of the function declaration.
+  Now we will use object destructuring as the function's parameter instead of destructuring the object 
+  inside of the function declaration.
   Example:
     function example( {one, two, three} ) {
       return one + two + three
@@ -91,7 +98,15 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function largeNumbers({first, second, third}) {
+  if (first < second && first < third){
+    return first;
+  } else if (second < first && second < third) {
+    return second;
+  } else if ( third < first && third < second) {
+    return third;
+  }
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -103,5 +118,12 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
+function numberGroups({a, b, c}) {
+  if (a > b && a > c){
+    return a;
+  } else if (b > a && b > c) {
+    return b;
+  } else if ( c > a && c > b) {
+    return c;
+  }
+}

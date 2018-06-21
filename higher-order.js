@@ -13,7 +13,8 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 // Do not edit the code above.
 
 /*
-  Use the filter method on mixedNumbers to make a new array of just the even numbers.
+  Use the filter method on mixedNumbers to make a new array of just the 
+  even numbers.
 
   The filter function takes a callback with the parameters
   function(element, index, wholeArray){}  Function Form
@@ -21,9 +22,7 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 //Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
-
-
+let evenNumbers = mixedNumbers.filter(evens = (val) => val % 2 === 0);
 
 ////////// PROBLEM 2 //////////
 
@@ -32,11 +31,14 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 // Do not edit the code above.
 
 /*
-  Use the map method on the prices array to calculate a new array of post-tax prices.
+  Use the map method on the prices array to calculate a new array of post-tax 
+  prices.
   Use a 7% tax rate.
 
-  Math reminder! To calculate the price after tax, multiply the price by 1 plus the taxRate as a decimal.
-  Example: if tax is 7%, the price afterTax could be calculated like this: afterTax = price * 1.07) 
+  Math reminder! To calculate the price after tax, multiply the price by 1 plus 
+  the taxRate as a decimal.
+  Example: if tax is 7%, the price afterTax could be calculated like this: 
+  afterTax = price * 1.07) 
 
   The map function also takes a callback with the parameters
   function(element, index, wholeArray){}  Function Form
@@ -44,8 +46,7 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 //Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
-
+let postTaxPrices = prices.map(x => x * 1.07);
 
 
 ////////// PROBLEM 3 //////////
@@ -63,7 +64,8 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+const reducer = (total, value) => total + value;
+let totalPopulation = populations.reduce(reducer);
 
 
 
@@ -83,14 +85,14 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 
 /*
   Now we're going to ramp these up a little bit.
-  Instead of just arrays of numbers, we are going to have array of objects that we want to use map, filter, and reduce with.
+  Instead of just arrays of numbers, we are going to have array of objects that we want to use map, 
+  filter, and reduce with.
 
   Use the filter method to return only the monsters that have a CP of over 200.
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
-
+let myStrongest = monstersInYourPocket.filter(strongest => strongest.CP > 200)
 
 
 ////////// PROBLEM 5 //////////
@@ -106,7 +108,7 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a higher order method to get the sum of all the order totals after adding in the sales tax
 */
 
-let ordersTotal //Code Here
+let totalPopulation = // code goes here
 
 
 
