@@ -1,7 +1,5 @@
 /* 
-  Once you complete a problem, refresh ./classes.html in 
-  your browser and check to see if the problem's test(s) are 
-  passing.
+  Once you complete a problem, refresh ./classes.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
 
@@ -25,17 +23,15 @@
     - age
   Each employee has the following methods:
     - makeWidget
-      - This returns a string equal to the employees first name
-       + last name + the word widget
+      - This returns a string equal to the employees first name + last name + the word widget
       - Example: "Dave Smith Widget"
 
-  Call your class Employee and receive all the data in the 
-  constructor in the order listed above.
+  Call your class Employee and receive all the data in the constructor in the order listed above.
 */
 
 //Code Here
-class Employee {
-  constructor(first, last, email, age) {
+class Employee{
+  constructor(first, last, email, age){
     this.first_name = first;
     this.last_name = last;
     this.email = email;
@@ -47,8 +43,8 @@ class Employee {
   }
 }
 
-let empl = new Employee('Dave', 'Smith', 'dave.smith@email.com', 32);
-console.log(empl.makeWidget());
+let emp = new Employee("Angela", "Leighton", "angiebaby120@gmail.com", 41);
+console.log(emp.makeWidget);
 
 
 ////////// PROBLEM 2 //////////
@@ -60,8 +56,7 @@ console.log(empl.makeWidget());
     - reports (other employees) that defaults to an empty array
   Each manager has the following additional methods:
     - hire (employee)
-      - Accepts a new employee as a parameter and pushes it to their list of 
-      reports.
+      - Accepts a new employee as a parameter and pushes it to their list of reports.
     - fire (index)
       - Fire removes employees from their list of reports at the given index
 
@@ -69,28 +64,22 @@ console.log(empl.makeWidget());
 */
 
 //Code Here
-class Manager extends Employee {
-  constructor(first, last, email, age, report) {
-    super(first,last,email,age)
-    this.report = [];
+class Manager extends Employee{
+  constructor(first, last, email, age){
+    super(first, last, email, age)
+    this.reports = [];
   }
 
-  hire(employee) {
-    this.report.push(employee);
+  hire(empl) {
+    this.reports.push(empl);
   }
 
-  fire(index){
-    this.report.splice(index, 1);
+  fire(index) {
+    this.reports.splice(index, 1);
   }
 }
 
-// let list = [];
-
-darryl = new Manager('Darryl', 'Bates', 'dbates1133@email.com', 57);
-darryl.hire(empl);
-darryl.fire(0);
-
-
+let guy = new Manager("Chris", "Linwood", "chrisboo@aol.com", 35);
 
 
 ////////// PROBLEM 3 //////////
@@ -116,47 +105,7 @@ darryl.fire(0);
 */
 
 //Code Here
-class ProgressiveManager extends Employee {
-  constructor(first, last, email, age, report, title, bonus) {
-    super(first, last, email, age)
-    this.report = report;
-    this.title = 'Not a manager';
-    this.bonus = 0;
-  }
 
-  hire(employee){
-    this.report.push(employee);
-    setTitle();
-  }
-
-  fire(index){
-    this.report.splice(index, 1);
-    setTitle();
-    updateBonus();
-  }
-
-  setTitle(){
-    
-    if(this.reports.length === 0) {
-      this.title = 'Not a manager'
-    } else if (this.reports.length >=1 && this.reports.length <=3) {
-      this.title = 'Barely Manager'
-    } else if (this.reports.length >=4 && this.reports.length <= 10) {
-      this.title = 'Mostly Manager'
-    } else if (this.reports.length >= 11 && this.reports.length <=50) {
-      this.title = 'Manager'
-    } else if (this.reports.length >= 51 && this.reports.length <= 100) {
-      this.title = 'Manager Plus'
-    } else if (this.reports.length > 100) {
-      this.title = 'Bestest Manager'
-    }
-
-  }
-
-  updateBonus() {
-    this.bonus += 100;
-  }
-}
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
